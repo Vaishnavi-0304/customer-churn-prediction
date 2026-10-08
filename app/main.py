@@ -12,7 +12,7 @@ import os
 
 # Set page configuration FIRST before any other streamlit commands
 st.set_page_config(
-    page_title="ChurnGuard AI | Customer Intelligence Platform",
+    page_title="Churnguard | Customer Intelligence Platform",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -64,15 +64,6 @@ if not st.session_state["authenticated"]:
                 </div>
             </div>
         """, unsafe_allow_html=True)
-        
-        st.markdown("<div style='font-size: 0.78rem; color: #94a3b8; margin-bottom: 6px;'>Reviewer Quick-Access:</div>", unsafe_allow_html=True)
-        if st.button("⚡ Instant Demo Sign-In", use_container_width=True, key="gate_demo_login_btn"):
-            demo_user, _ = authenticate_user("demo@churnguard.ai", "Admin@123")
-            if demo_user:
-                st.session_state["authenticated"] = True
-                st.session_state["user"] = demo_user
-                st.session_state["current_page"] = "Dashboard"
-                st.rerun()
 
     # Render landing/login/register screen
     render_landing_page()

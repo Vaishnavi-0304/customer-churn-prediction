@@ -34,7 +34,7 @@ def render_brand_header():
         <div class="brand-header">
             <div class="brand-logo">🛡️</div>
             <div class="brand-text">
-                <h2>ChurnGuard AI</h2>
+                <h2>Churnguard</h2>
                 <p>Customer Intelligence Platform</p>
             </div>
         </div>
@@ -105,7 +105,7 @@ def render_footer():
     """Renders standard application footer."""
     st.markdown("""
         <div class="footer-container">
-            <p><strong>ChurnGuard AI</strong> • Customer Intelligence & Churn Prediction System</p>
+            <p><strong>Churnguard</strong> • Customer Intelligence & Churn Prediction System</p>
             <p>Built with Python, Scikit-learn, XGBoost, Pandas, Plotly & Streamlit • Powered by Real-World IBM Telco Dataset</p>
         </div>
     """, unsafe_allow_html=True)

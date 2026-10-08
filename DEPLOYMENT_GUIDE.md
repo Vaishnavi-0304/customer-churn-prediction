@@ -1,6 +1,6 @@
-# Deployment Guide for ChurnGuard AI
+# Deployment Guide for Churnguard
 
-This guide walks you through deploying the **Customer Churn Prediction System (ChurnGuard AI)** to production. All necessary deployment configuration files (`Dockerfile`, `.dockerignore`, `.streamlit/config.toml`, `render.yaml`, `requirements.txt`) are already configured.
+This guide walks you through deploying the **Customer Churn Prediction System (Churnguard)** to production. All necessary deployment configuration files (`Dockerfile`, `.dockerignore`, `.streamlit/config.toml`, `render.yaml`, `requirements.txt`) are already configured.
 
 ---
 

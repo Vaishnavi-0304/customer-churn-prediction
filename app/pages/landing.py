@@ -107,23 +107,10 @@ def render_landing_page():
         tab_login, tab_register = st.tabs(["🔑 Sign In", "📝 Create Account"])
         
         with tab_login:
-            # 1-Click Instant Demo Login
-            if st.button("⚡ Instant Demo Sign-In (Alex Morgan)", key="btn_quick_demo", use_container_width=True):
-                user, msg = authenticate_user("demo@churnguard.ai", "Admin@123")
-                if user:
-                    st.session_state["authenticated"] = True
-                    st.session_state["user"] = user
-                    st.session_state["current_page"] = "Dashboard"
-                    st.success("Signed in as Demo Evaluator! Loading workspace...")
-                    st.rerun()
-                else:
-                    st.error(msg)
-                
-            st.markdown("<div style='text-align:center; color:#64748b; font-size:0.78rem; margin:8px 0;'>— OR ENTER CREDENTIALS —</div>", unsafe_allow_html=True)
-            login_email = st.text_input("Work Email", value="", placeholder="demo@churnguard.ai", key="in_login_email")
-            login_pwd = st.text_input("Password", value="", type="password", placeholder="Admin@123", key="in_login_pwd")
+            login_email = st.text_input("Work Email", value="", placeholder="name@company.com", key="in_login_email")
+            login_pwd = st.text_input("Password", value="", type="password", placeholder="Enter your password", key="in_login_pwd")
             
-            if st.button("Sign In to ChurnGuard AI", use_container_width=True, key="btn_do_login"):
+            if st.button("Sign In to Churnguard", use_container_width=True, key="btn_do_login"):
                 if not login_email or not login_pwd:
                     st.error("Please enter both email and password.")
                 else:
