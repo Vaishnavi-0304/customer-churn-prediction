@@ -1,0 +1,3293 @@
+{
+  "dataset_stats": {
+    "source": "IBM Telco Customer Churn Dataset",
+    "total_records": 7043,
+    "total_features": 19,
+    "target_distribution": {
+      "retained": 5174,
+      "churned": 1869,
+      "churn_rate_pct": 26.54
+    },
+    "train_records": 5634,
+    "test_records": 1409,
+    "numerical_attributes": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "categorical_attributes": [
+      "gender",
+      "SeniorCitizen",
+      "Partner",
+      "Dependents",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod"
+    ]
+  },
+  "feature_selection": {
+    "total_original_features": 46,
+    "total_selected_features": 35,
+    "total_removed_features": 11,
+    "selected_features": [
+      "Contract_Month-to-month",
+      "tenure",
+      "OnlineSecurity_No",
+      "TechSupport_No",
+      "Contract_Two year",
+      "InternetService_Fiber optic",
+      "PaymentMethod_Electronic check",
+      "TotalCharges",
+      "MonthlyCharges",
+      "OnlineBackup_No",
+      "DeviceProtection_No",
+      "DeviceProtection_No internet service",
+      "OnlineSecurity_No internet service",
+      "StreamingTV_No internet service",
+      "OnlineBackup_No internet service",
+      "TechSupport_No internet service",
+      "InternetService_No",
+      "StreamingMovies_No internet service",
+      "PaperlessBilling_No",
+      "Contract_One year",
+      "PaperlessBilling_Yes",
+      "TechSupport_Yes",
+      "Dependents_No",
+      "OnlineSecurity_Yes",
+      "SeniorCitizen_0",
+      "PaymentMethod_Credit card (automatic)",
+      "Dependents_Yes",
+      "StreamingMovies_No",
+      "PaymentMethod_Bank transfer (automatic)",
+      "InternetService_DSL",
+      "PaymentMethod_Mailed check",
+      "SeniorCitizen_1",
+      "Partner_Yes",
+      "Partner_No",
+      "PhoneService_Yes"
+    ],
+    "removed_features": [
+      {
+        "feature": "gender_Female",
+        "composite_score": 0.0369,
+        "mutual_info": 0.0056,
+        "rf_importance": 0.0069,
+        "reason": "Demographic feature showing nearly identical ~26% churn rate across genders; minimal predictive power."
+      },
+      {
+        "feature": "StreamingTV_No",
+        "composite_score": 0.0368,
+        "mutual_info": 0.0014,
+        "rf_importance": 0.0057,
+        "reason": "Low signal-to-noise ratio (composite score 0.0368). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "DeviceProtection_Yes",
+        "composite_score": 0.0289,
+        "mutual_info": 0.0033,
+        "rf_importance": 0.0056,
+        "reason": "Low signal-to-noise ratio (composite score 0.0289). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "PhoneService_No",
+        "composite_score": 0.0275,
+        "mutual_info": 0.0053,
+        "rf_importance": 0.0028,
+        "reason": "Over 90% of customers have standard phone service; low discriminatory power compared to internet features."
+      },
+      {
+        "feature": "OnlineBackup_Yes",
+        "composite_score": 0.0239,
+        "mutual_info": 0.0,
+        "rf_importance": 0.0085,
+        "reason": "Low signal-to-noise ratio (composite score 0.0239). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "StreamingMovies_Yes",
+        "composite_score": 0.0163,
+        "mutual_info": 0.0,
+        "rf_importance": 0.0068,
+        "reason": "Low signal-to-noise ratio (composite score 0.0163). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "StreamingTV_Yes",
+        "composite_score": 0.0151,
+        "mutual_info": 0.0,
+        "rf_importance": 0.0054,
+        "reason": "Low signal-to-noise ratio (composite score 0.0151). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "MultipleLines_Yes",
+        "composite_score": 0.0117,
+        "mutual_info": 0.0,
+        "rf_importance": 0.0062,
+        "reason": "Low signal-to-noise ratio (composite score 0.0117). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "MultipleLines_No",
+        "composite_score": 0.0108,
+        "mutual_info": 0.0,
+        "rf_importance": 0.0064,
+        "reason": "Low signal-to-noise ratio (composite score 0.0108). Shows negligible variance differentiation between churned and retained segments."
+      },
+      {
+        "feature": "gender_Male",
+        "composite_score": 0.009,
+        "mutual_info": 0.0,
+        "rf_importance": 0.0063,
+        "reason": "Demographic feature showing nearly identical ~26% churn rate across genders; minimal predictive power."
+      },
+      {
+        "feature": "MultipleLines_No phone service",
+        "composite_score": 0.0045,
+        "mutual_info": 0.0008,
+        "rf_importance": 0.002,
+        "reason": "Low signal-to-noise ratio (composite score 0.0045). Shows negligible variance differentiation between churned and retained segments."
+      }
+    ],
+    "feature_rankings": [
+      {
+        "feature": "Contract_Month-to-month",
+        "mutual_info": 0.08384260119107001,
+        "f_score": 1114.2201937049333,
+        "rf_importance": 0.11912151541357076,
+        "composite_score": 0.9431119720184548
+      },
+      {
+        "feature": "tenure",
+        "mutual_info": 0.06592773180437272,
+        "f_score": 763.890182583269,
+        "rf_importance": 0.1465386289313366,
+        "composite_score": 0.8202034583028861
+      },
+      {
+        "feature": "OnlineSecurity_No",
+        "mutual_info": 0.05797468926011384,
+        "f_score": 767.8586447600916,
+        "rf_importance": 0.06850780499007378,
+        "composite_score": 0.6214223573718222
+      },
+      {
+        "feature": "TechSupport_No",
+        "mutual_info": 0.0594457913985762,
+        "f_score": 731.76835713636,
+        "rf_importance": 0.04060936782300854,
+        "composite_score": 0.5608365990770118
+      },
+      {
+        "feature": "Contract_Two year",
+        "mutual_info": 0.06089109935197823,
+        "f_score": 566.070664028231,
+        "rf_importance": 0.04637632858735322,
+        "composite_score": 0.5350832200772053
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "mutual_info": 0.04630991400575901,
+        "f_score": 610.1999220658564,
+        "rf_importance": 0.05476574928466662,
+        "composite_score": 0.4948078881097236
+      },
+      {
+        "feature": "PaymentMethod_Electronic check",
+        "mutual_info": 0.04400696075322985,
+        "f_score": 595.4244905512516,
+        "rf_importance": 0.049647924869160115,
+        "composite_score": 0.469223501634748
+      },
+      {
+        "feature": "TotalCharges",
+        "mutual_info": 0.039152535747030814,
+        "f_score": 219.6914563446517,
+        "rf_importance": 0.09960151985731192,
+        "composite_score": 0.4485456474770325
+      },
+      {
+        "feature": "MonthlyCharges",
+        "mutual_info": 0.04510985346356855,
+        "f_score": 229.9038226790262,
+        "rf_importance": 0.06896122940624835,
+        "composite_score": 0.4161409674264773
+      },
+      {
+        "feature": "OnlineBackup_No",
+        "mutual_info": 0.031745594186644244,
+        "f_score": 440.5063487264425,
+        "rf_importance": 0.02591567533181994,
+        "composite_score": 0.3197719507358294
+      },
+      {
+        "feature": "DeviceProtection_No",
+        "mutual_info": 0.032390127643145306,
+        "f_score": 371.4468872193705,
+        "rf_importance": 0.010747481009442278,
+        "composite_score": 0.2727798064408089
+      },
+      {
+        "feature": "DeviceProtection_No internet service",
+        "mutual_info": 0.036680491196395604,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.008202711949641573,
+        "composite_score": 0.2718247761384347
+      },
+      {
+        "feature": "OnlineSecurity_No internet service",
+        "mutual_info": 0.03662876496932532,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.004973815089344542,
+        "composite_score": 0.2648783297457744
+      },
+      {
+        "feature": "StreamingTV_No internet service",
+        "mutual_info": 0.03464166340449082,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.00937647658904076,
+        "composite_score": 0.264533301435805
+      },
+      {
+        "feature": "OnlineBackup_No internet service",
+        "mutual_info": 0.034701325809607164,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.006502080531532688,
+        "composite_score": 0.2588538299358344
+      },
+      {
+        "feature": "TechSupport_No internet service",
+        "mutual_info": 0.031179505728943457,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.008529067386980786,
+        "composite_score": 0.24625758869514203
+      },
+      {
+        "feature": "InternetService_No",
+        "mutual_info": 0.02634185782249543,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.006621725498663502,
+        "composite_score": 0.2192203618118055
+      },
+      {
+        "feature": "StreamingMovies_No internet service",
+        "mutual_info": 0.02659045272821481,
+        "f_score": 311.4902381709771,
+        "rf_importance": 0.004527062231469983,
+        "composite_score": 0.21606013280103076
+      },
+      {
+        "feature": "PaperlessBilling_No",
+        "mutual_info": 0.02588095400126056,
+        "f_score": 229.76109906619797,
+        "rf_importance": 0.011027640059799396,
+        "composite_score": 0.20415750020056733
+      },
+      {
+        "feature": "Contract_One year",
+        "mutual_info": 0.024095936736522994,
+        "f_score": 187.43395081210286,
+        "rf_importance": 0.017471609026429396,
+        "composite_score": 0.1976153912499813
+      },
+      {
+        "feature": "PaperlessBilling_Yes",
+        "mutual_info": 0.015708387708426752,
+        "f_score": 229.76109906619845,
+        "rf_importance": 0.011791540902364783,
+        "composite_score": 0.1572107948779942
+      },
+      {
+        "feature": "TechSupport_Yes",
+        "mutual_info": 0.014076375040949163,
+        "f_score": 159.04497796882941,
+        "rf_importance": 0.013872412097134714,
+        "composite_score": 0.1347017915008486
+      },
+      {
+        "feature": "Dependents_No",
+        "mutual_info": 0.01330573322897921,
+        "f_score": 162.49241715510723,
+        "rf_importance": 0.007140672512453554,
+        "composite_score": 0.11798566342483277
+      },
+      {
+        "feature": "OnlineSecurity_Yes",
+        "mutual_info": 0.00868999157303385,
+        "f_score": 177.05152929322375,
+        "rf_importance": 0.015696214850357538,
+        "composite_score": 0.11763674211982542
+      },
+      {
+        "feature": "SeniorCitizen_0",
+        "mutual_info": 0.015720998524532792,
+        "f_score": 121.97960838863641,
+        "rf_importance": 0.0056952176546992,
+        "composite_score": 0.11560112549712631
+      },
+      {
+        "feature": "PaymentMethod_Credit card (automatic)",
+        "mutual_info": 0.013753304426777913,
+        "f_score": 108.983392649828,
+        "rf_importance": 0.006301911921934911,
+        "composite_score": 0.1039731257891117
+      },
+      {
+        "feature": "Dependents_Yes",
+        "mutual_info": 0.010232030582802532,
+        "f_score": 162.49241715510666,
+        "rf_importance": 0.006096972651883746,
+        "composite_score": 0.10115592382277021
+      },
+      {
+        "feature": "StreamingMovies_No",
+        "mutual_info": 0.012916188903365544,
+        "f_score": 95.24367862812073,
+        "rf_importance": 0.005721851612961852,
+        "composite_score": 0.0950763428781422
+      },
+      {
+        "feature": "PaymentMethod_Bank transfer (automatic)",
+        "mutual_info": 0.012587169903859996,
+        "f_score": 89.57277231381275,
+        "rf_importance": 0.005642732054004148,
+        "composite_score": 0.0918155686604204
+      },
+      {
+        "feature": "InternetService_DSL",
+        "mutual_info": 0.0030718655650645577,
+        "f_score": 94.766041317848,
+        "rf_importance": 0.02477652825963072,
+        "composite_score": 0.08751873180794152
+      },
+      {
+        "feature": "PaymentMethod_Mailed check",
+        "mutual_info": 0.013861266202403133,
+        "f_score": 45.284667215739915,
+        "rf_importance": 0.0043241248830858245,
+        "composite_score": 0.08323337779247586
+      },
+      {
+        "feature": "SeniorCitizen_1",
+        "mutual_info": 0.008554159306328968,
+        "f_score": 121.97960838863723,
+        "rf_importance": 0.006529799553770323,
+        "composite_score": 0.08314093299189247
+      },
+      {
+        "feature": "Partner_Yes",
+        "mutual_info": 0.0017472433019218858,
+        "f_score": 122.18063278957457,
+        "rf_importance": 0.006118380949388604,
+        "composite_score": 0.04986666636517694
+      },
+      {
+        "feature": "Partner_No",
+        "mutual_info": 0.0009388962140783885,
+        "f_score": 122.18063278957457,
+        "rf_importance": 0.006883316645728857,
+        "composite_score": 0.04759734053647606
+      },
+      {
+        "feature": "PhoneService_Yes",
+        "mutual_info": 0.00842052907695634,
+        "f_score": 1.8108026769032783,
+        "rf_importance": 0.0028888424517423865,
+        "composite_score": 0.042592908139942355
+      },
+      {
+        "feature": "gender_Female",
+        "mutual_info": 0.005594221504136021,
+        "f_score": 0.02744687719270381,
+        "rf_importance": 0.00685791446329883,
+        "composite_score": 0.0368643253470932
+      },
+      {
+        "feature": "StreamingTV_No",
+        "mutual_info": 0.0014095759427625865,
+        "f_score": 82.73669777592563,
+        "rf_importance": 0.0057146969521274195,
+        "composite_score": 0.036797693161228114
+      },
+      {
+        "feature": "DeviceProtection_Yes",
+        "mutual_info": 0.0032741515673266885,
+        "f_score": 21.469349610502302,
+        "rf_importance": 0.005573605658840725,
+        "composite_score": 0.028904109971666748
+      },
+      {
+        "feature": "PhoneService_No",
+        "mutual_info": 0.005298900005827889,
+        "f_score": 1.8108026769035157,
+        "rf_importance": 0.0027953643153200572,
+        "composite_score": 0.02750614306111156
+      },
+      {
+        "feature": "OnlineBackup_Yes",
+        "mutual_info": 0.0,
+        "f_score": 38.52789836423058,
+        "rf_importance": 0.008500037577475377,
+        "composite_score": 0.02394879313445427
+      },
+      {
+        "feature": "StreamingMovies_Yes",
+        "mutual_info": 0.0,
+        "f_score": 23.007980903565066,
+        "rf_importance": 0.006837420199670883,
+        "composite_score": 0.01632022466000532
+      },
+      {
+        "feature": "StreamingTV_Yes",
+        "mutual_info": 0.0,
+        "f_score": 29.674596726659043,
+        "rf_importance": 0.005397335178152315,
+        "composite_score": 0.015127186505245378
+      },
+      {
+        "feature": "MultipleLines_Yes",
+        "mutual_info": 0.0,
+        "f_score": 10.808668129034073,
+        "rf_importance": 0.0061940488689354,
+        "composite_score": 0.01170058299185775
+      },
+      {
+        "feature": "MultipleLines_No",
+        "mutual_info": 0.0,
+        "f_score": 5.983298233234493,
+        "rf_importance": 0.006388699512638319,
+        "composite_score": 0.010805219004260532
+      },
+      {
+        "feature": "gender_Male",
+        "mutual_info": 0.0,
+        "f_score": 0.02744687719270381,
+        "rf_importance": 0.006280938059399029,
+        "composite_score": 0.008977991509593186
+      },
+      {
+        "feature": "MultipleLines_No phone service",
+        "mutual_info": 0.0008431633788628101,
+        "f_score": 1.8108026769035157,
+        "rf_importance": 0.001954006346105907,
+        "composite_score": 0.004502775556179313
+      }
+    ],
+    "top_10_features": [
+      {
+        "feature": "Contract_Month-to-month",
+        "composite_score": 0.9431119720184548,
+        "rf_importance": 0.11912151541357076
+      },
+      {
+        "feature": "tenure",
+        "composite_score": 0.8202034583028861,
+        "rf_importance": 0.1465386289313366
+      },
+      {
+        "feature": "OnlineSecurity_No",
+        "composite_score": 0.6214223573718222,
+        "rf_importance": 0.06850780499007378
+      },
+      {
+        "feature": "TechSupport_No",
+        "composite_score": 0.5608365990770118,
+        "rf_importance": 0.04060936782300854
+      },
+      {
+        "feature": "Contract_Two year",
+        "composite_score": 0.5350832200772053,
+        "rf_importance": 0.04637632858735322
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "composite_score": 0.4948078881097236,
+        "rf_importance": 0.05476574928466662
+      },
+      {
+        "feature": "PaymentMethod_Electronic check",
+        "composite_score": 0.469223501634748,
+        "rf_importance": 0.049647924869160115
+      },
+      {
+        "feature": "TotalCharges",
+        "composite_score": 0.4485456474770325,
+        "rf_importance": 0.09960151985731192
+      },
+      {
+        "feature": "MonthlyCharges",
+        "composite_score": 0.4161409674264773,
+        "rf_importance": 0.06896122940624835
+      },
+      {
+        "feature": "OnlineBackup_No",
+        "composite_score": 0.3197719507358294,
+        "rf_importance": 0.02591567533181994
+      }
+    ]
+  },
+  "model_evaluations": [
+    {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.8055,
+      "precision": 0.6572,
+      "recall": 0.5588,
+      "f1_score": 0.604,
+      "roc_auc": 0.842,
+      "confusion_matrix": [
+        [
+          926,
+          109
+        ],
+        [
+          165,
+          209
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.003864734299516908,
+          "tpr": 0.0374331550802139
+        },
+        {
+          "fpr": 0.007729468599033816,
+          "tpr": 0.06417112299465241
+        },
+        {
+          "fpr": 0.014492753623188406,
+          "tpr": 0.1443850267379679
+        },
+        {
+          "fpr": 0.020289855072463767,
+          "tpr": 0.16310160427807488
+        },
+        {
+          "fpr": 0.024154589371980676,
+          "tpr": 0.18983957219251338
+        },
+        {
+          "fpr": 0.028019323671497585,
+          "tpr": 0.2192513368983957
+        },
+        {
+          "fpr": 0.034782608695652174,
+          "tpr": 0.2887700534759358
+        },
+        {
+          "fpr": 0.03961352657004831,
+          "tpr": 0.33689839572192515
+        },
+        {
+          "fpr": 0.0463768115942029,
+          "tpr": 0.35294117647058826
+        },
+        {
+          "fpr": 0.05314009661835749,
+          "tpr": 0.3877005347593583
+        },
+        {
+          "fpr": 0.057971014492753624,
+          "tpr": 0.4037433155080214
+        },
+        {
+          "fpr": 0.06280193236714976,
+          "tpr": 0.42245989304812837
+        },
+        {
+          "fpr": 0.07246376811594203,
+          "tpr": 0.4411764705882353
+        },
+        {
+          "fpr": 0.07729468599033816,
+          "tpr": 0.4625668449197861
+        },
+        {
+          "fpr": 0.08695652173913043,
+          "tpr": 0.4893048128342246
+        },
+        {
+          "fpr": 0.0927536231884058,
+          "tpr": 0.5026737967914439
+        },
+        {
+          "fpr": 0.09855072463768116,
+          "tpr": 0.5374331550802139
+        },
+        {
+          "fpr": 0.10338164251207729,
+          "tpr": 0.5561497326203209
+        },
+        {
+          "fpr": 0.10821256038647344,
+          "tpr": 0.56951871657754
+        },
+        {
+          "fpr": 0.11400966183574879,
+          "tpr": 0.5828877005347594
+        },
+        {
+          "fpr": 0.1294685990338164,
+          "tpr": 0.5989304812834224
+        },
+        {
+          "fpr": 0.1468599033816425,
+          "tpr": 0.6149732620320856
+        },
+        {
+          "fpr": 0.15942028985507245,
+          "tpr": 0.6283422459893048
+        },
+        {
+          "fpr": 0.1671497584541063,
+          "tpr": 0.6443850267379679
+        },
+        {
+          "fpr": 0.178743961352657,
+          "tpr": 0.660427807486631
+        },
+        {
+          "fpr": 0.1855072463768116,
+          "tpr": 0.679144385026738
+        },
+        {
+          "fpr": 0.2038647342995169,
+          "tpr": 0.6978609625668449
+        },
+        {
+          "fpr": 0.2144927536231884,
+          "tpr": 0.7085561497326203
+        },
+        {
+          "fpr": 0.2251207729468599,
+          "tpr": 0.7245989304812834
+        },
+        {
+          "fpr": 0.2357487922705314,
+          "tpr": 0.7379679144385026
+        },
+        {
+          "fpr": 0.25120772946859904,
+          "tpr": 0.7540106951871658
+        },
+        {
+          "fpr": 0.2618357487922705,
+          "tpr": 0.7727272727272727
+        },
+        {
+          "fpr": 0.2743961352657005,
+          "tpr": 0.7887700534759359
+        },
+        {
+          "fpr": 0.28309178743961355,
+          "tpr": 0.8021390374331551
+        },
+        {
+          "fpr": 0.30241545893719807,
+          "tpr": 0.8155080213903744
+        },
+        {
+          "fpr": 0.3169082125603865,
+          "tpr": 0.8315508021390374
+        },
+        {
+          "fpr": 0.3352657004830918,
+          "tpr": 0.8449197860962567
+        },
+        {
+          "fpr": 0.3497584541062802,
+          "tpr": 0.8556149732620321
+        },
+        {
+          "fpr": 0.35845410628019325,
+          "tpr": 0.8663101604278075
+        },
+        {
+          "fpr": 0.3719806763285024,
+          "tpr": 0.8796791443850267
+        },
+        {
+          "fpr": 0.38743961352657,
+          "tpr": 0.893048128342246
+        },
+        {
+          "fpr": 0.4106280193236715,
+          "tpr": 0.9037433155080213
+        },
+        {
+          "fpr": 0.421256038647343,
+          "tpr": 0.9144385026737968
+        },
+        {
+          "fpr": 0.4463768115942029,
+          "tpr": 0.9251336898395722
+        },
+        {
+          "fpr": 0.4888888888888889,
+          "tpr": 0.9358288770053476
+        },
+        {
+          "fpr": 0.5033816425120773,
+          "tpr": 0.946524064171123
+        },
+        {
+          "fpr": 0.5246376811594203,
+          "tpr": 0.9572192513368984
+        },
+        {
+          "fpr": 0.5652173913043478,
+          "tpr": 0.9679144385026738
+        },
+        {
+          "fpr": 0.6125603864734299,
+          "tpr": 0.9786096256684492
+        },
+        {
+          "fpr": 0.7371980676328502,
+          "tpr": 0.9893048128342246
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 926,
+      "false_positives": 109,
+      "false_negatives": 165,
+      "true_positives": 209
+    },
+    {
+      "model_name": "Decision Tree",
+      "accuracy": 0.7984,
+      "precision": 0.6347,
+      "recall": 0.5668,
+      "f1_score": 0.5989,
+      "roc_auc": 0.8297,
+      "confusion_matrix": [
+        [
+          913,
+          122
+        ],
+        [
+          162,
+          212
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.003864734299516908,
+          "tpr": 0.10962566844919786
+        },
+        {
+          "fpr": 0.00676328502415459,
+          "tpr": 0.13368983957219252
+        },
+        {
+          "fpr": 0.03671497584541063,
+          "tpr": 0.27540106951871657
+        },
+        {
+          "fpr": 0.06956521739130435,
+          "tpr": 0.39037433155080214
+        },
+        {
+          "fpr": 0.08888888888888889,
+          "tpr": 0.46524064171123
+        },
+        {
+          "fpr": 0.1178743961352657,
+          "tpr": 0.5668449197860963
+        },
+        {
+          "fpr": 0.14879227053140096,
+          "tpr": 0.6122994652406417
+        },
+        {
+          "fpr": 0.16908212560386474,
+          "tpr": 0.6390374331550802
+        },
+        {
+          "fpr": 0.1932367149758454,
+          "tpr": 0.6684491978609626
+        },
+        {
+          "fpr": 0.2396135265700483,
+          "tpr": 0.7406417112299465
+        },
+        {
+          "fpr": 0.25217391304347825,
+          "tpr": 0.7433155080213903
+        },
+        {
+          "fpr": 0.30241545893719807,
+          "tpr": 0.7941176470588235
+        },
+        {
+          "fpr": 0.3565217391304348,
+          "tpr": 0.8368983957219251
+        },
+        {
+          "fpr": 0.3748792270531401,
+          "tpr": 0.8716577540106952
+        },
+        {
+          "fpr": 0.39420289855072466,
+          "tpr": 0.8796791443850267
+        },
+        {
+          "fpr": 0.4222222222222222,
+          "tpr": 0.8903743315508021
+        },
+        {
+          "fpr": 0.4318840579710145,
+          "tpr": 0.8903743315508021
+        },
+        {
+          "fpr": 0.5014492753623189,
+          "tpr": 0.9331550802139037
+        },
+        {
+          "fpr": 0.5304347826086957,
+          "tpr": 0.9385026737967914
+        },
+        {
+          "fpr": 0.5797101449275363,
+          "tpr": 0.9518716577540107
+        },
+        {
+          "fpr": 0.6231884057971014,
+          "tpr": 0.9705882352941176
+        },
+        {
+          "fpr": 0.6454106280193237,
+          "tpr": 0.9705882352941176
+        },
+        {
+          "fpr": 0.7632850241545893,
+          "tpr": 0.9893048128342246
+        },
+        {
+          "fpr": 0.7922705314009661,
+          "tpr": 0.9919786096256684
+        },
+        {
+          "fpr": 0.978743961352657,
+          "tpr": 0.9973262032085561
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 913,
+      "false_positives": 122,
+      "false_negatives": 162,
+      "true_positives": 212
+    },
+    {
+      "model_name": "Random Forest (Default)",
+      "accuracy": 0.7821,
+      "precision": 0.6128,
+      "recall": 0.4866,
+      "f1_score": 0.5425,
+      "roc_auc": 0.8183,
+      "confusion_matrix": [
+        [
+          920,
+          115
+        ],
+        [
+          192,
+          182
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.001932367149758454,
+          "tpr": 0.0106951871657754
+        },
+        {
+          "fpr": 0.001932367149758454,
+          "tpr": 0.029411764705882353
+        },
+        {
+          "fpr": 0.004830917874396135,
+          "tpr": 0.040106951871657755
+        },
+        {
+          "fpr": 0.005797101449275362,
+          "tpr": 0.05080213903743316
+        },
+        {
+          "fpr": 0.008695652173913044,
+          "tpr": 0.07219251336898395
+        },
+        {
+          "fpr": 0.010628019323671498,
+          "tpr": 0.10160427807486631
+        },
+        {
+          "fpr": 0.01642512077294686,
+          "tpr": 0.11229946524064172
+        },
+        {
+          "fpr": 0.01642512077294686,
+          "tpr": 0.12834224598930483
+        },
+        {
+          "fpr": 0.021256038647342997,
+          "tpr": 0.15240641711229946
+        },
+        {
+          "fpr": 0.02318840579710145,
+          "tpr": 0.18449197860962566
+        },
+        {
+          "fpr": 0.02608695652173913,
+          "tpr": 0.21122994652406418
+        },
+        {
+          "fpr": 0.028985507246376812,
+          "tpr": 0.22192513368983957
+        },
+        {
+          "fpr": 0.028985507246376812,
+          "tpr": 0.23529411764705882
+        },
+        {
+          "fpr": 0.03188405797101449,
+          "tpr": 0.25668449197860965
+        },
+        {
+          "fpr": 0.03188405797101449,
+          "tpr": 0.2727272727272727
+        },
+        {
+          "fpr": 0.034782608695652174,
+          "tpr": 0.2807486631016043
+        },
+        {
+          "fpr": 0.035748792270531404,
+          "tpr": 0.2887700534759358
+        },
+        {
+          "fpr": 0.03768115942028986,
+          "tpr": 0.29411764705882354
+        },
+        {
+          "fpr": 0.043478260869565216,
+          "tpr": 0.31283422459893045
+        },
+        {
+          "fpr": 0.04541062801932367,
+          "tpr": 0.32620320855614976
+        },
+        {
+          "fpr": 0.04927536231884058,
+          "tpr": 0.32620320855614976
+        },
+        {
+          "fpr": 0.05410628019323672,
+          "tpr": 0.34759358288770054
+        },
+        {
+          "fpr": 0.06086956521739131,
+          "tpr": 0.35561497326203206
+        },
+        {
+          "fpr": 0.06376811594202898,
+          "tpr": 0.36363636363636365
+        },
+        {
+          "fpr": 0.06859903381642513,
+          "tpr": 0.38235294117647056
+        },
+        {
+          "fpr": 0.07149758454106281,
+          "tpr": 0.39037433155080214
+        },
+        {
+          "fpr": 0.07536231884057971,
+          "tpr": 0.4037433155080214
+        },
+        {
+          "fpr": 0.08888888888888889,
+          "tpr": 0.42780748663101603
+        },
+        {
+          "fpr": 0.09082125603864734,
+          "tpr": 0.4385026737967914
+        },
+        {
+          "fpr": 0.10048309178743961,
+          "tpr": 0.45187165775401067
+        },
+        {
+          "fpr": 0.1111111111111111,
+          "tpr": 0.48663101604278075
+        },
+        {
+          "fpr": 0.12560386473429952,
+          "tpr": 0.516042780748663
+        },
+        {
+          "fpr": 0.13623188405797101,
+          "tpr": 0.5320855614973262
+        },
+        {
+          "fpr": 0.14396135265700483,
+          "tpr": 0.5588235294117647
+        },
+        {
+          "fpr": 0.1603864734299517,
+          "tpr": 0.5855614973262032
+        },
+        {
+          "fpr": 0.1671497584541063,
+          "tpr": 0.5935828877005348
+        },
+        {
+          "fpr": 0.1748792270531401,
+          "tpr": 0.606951871657754
+        },
+        {
+          "fpr": 0.1826086956521739,
+          "tpr": 0.6176470588235294
+        },
+        {
+          "fpr": 0.18743961352657004,
+          "tpr": 0.6203208556149733
+        },
+        {
+          "fpr": 0.20096618357487922,
+          "tpr": 0.6550802139037433
+        },
+        {
+          "fpr": 0.20579710144927535,
+          "tpr": 0.6818181818181818
+        },
+        {
+          "fpr": 0.22028985507246376,
+          "tpr": 0.6898395721925134
+        },
+        {
+          "fpr": 0.23864734299516907,
+          "tpr": 0.713903743315508
+        },
+        {
+          "fpr": 0.25217391304347825,
+          "tpr": 0.7459893048128342
+        },
+        {
+          "fpr": 0.27053140096618356,
+          "tpr": 0.7700534759358288
+        },
+        {
+          "fpr": 0.2898550724637681,
+          "tpr": 0.786096256684492
+        },
+        {
+          "fpr": 0.29082125603864734,
+          "tpr": 0.7887700534759359
+        },
+        {
+          "fpr": 0.30628019323671496,
+          "tpr": 0.8074866310160428
+        },
+        {
+          "fpr": 0.32270531400966185,
+          "tpr": 0.8235294117647058
+        },
+        {
+          "fpr": 0.3536231884057971,
+          "tpr": 0.8422459893048129
+        },
+        {
+          "fpr": 0.38454106280193234,
+          "tpr": 0.8556149732620321
+        },
+        {
+          "fpr": 0.40096618357487923,
+          "tpr": 0.8609625668449198
+        },
+        {
+          "fpr": 0.41256038647342996,
+          "tpr": 0.8716577540106952
+        },
+        {
+          "fpr": 0.4454106280193237,
+          "tpr": 0.8957219251336899
+        },
+        {
+          "fpr": 0.46956521739130436,
+          "tpr": 0.9010695187165776
+        },
+        {
+          "fpr": 0.506280193236715,
+          "tpr": 0.9117647058823529
+        },
+        {
+          "fpr": 0.5497584541062802,
+          "tpr": 0.9278074866310161
+        },
+        {
+          "fpr": 0.6096618357487923,
+          "tpr": 0.9411764705882353
+        },
+        {
+          "fpr": 0.6106280193236715,
+          "tpr": 0.9438502673796791
+        },
+        {
+          "fpr": 0.6454106280193237,
+          "tpr": 0.9625668449197861
+        },
+        {
+          "fpr": 0.6946859903381642,
+          "tpr": 0.9679144385026738
+        },
+        {
+          "fpr": 0.7304347826086957,
+          "tpr": 0.9705882352941176
+        },
+        {
+          "fpr": 0.7690821256038647,
+          "tpr": 0.9919786096256684
+        },
+        {
+          "fpr": 0.8434782608695652,
+          "tpr": 0.9973262032085561
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 920,
+      "false_positives": 115,
+      "false_negatives": 192,
+      "true_positives": 182
+    },
+    {
+      "model_name": "Random Forest (Tuned)",
+      "accuracy": 0.802,
+      "precision": 0.6877,
+      "recall": 0.4652,
+      "f1_score": 0.555,
+      "roc_auc": 0.8432,
+      "confusion_matrix": [
+        [
+          956,
+          79
+        ],
+        [
+          200,
+          174
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.002898550724637681,
+          "tpr": 0.07754010695187166
+        },
+        {
+          "fpr": 0.008695652173913044,
+          "tpr": 0.12032085561497326
+        },
+        {
+          "fpr": 0.012560386473429951,
+          "tpr": 0.16042780748663102
+        },
+        {
+          "fpr": 0.017391304347826087,
+          "tpr": 0.19518716577540107
+        },
+        {
+          "fpr": 0.022222222222222223,
+          "tpr": 0.22727272727272727
+        },
+        {
+          "fpr": 0.028985507246376812,
+          "tpr": 0.24866310160427807
+        },
+        {
+          "fpr": 0.03285024154589372,
+          "tpr": 0.2807486631016043
+        },
+        {
+          "fpr": 0.03864734299516908,
+          "tpr": 0.3155080213903743
+        },
+        {
+          "fpr": 0.0463768115942029,
+          "tpr": 0.3342245989304813
+        },
+        {
+          "fpr": 0.051207729468599035,
+          "tpr": 0.3582887700534759
+        },
+        {
+          "fpr": 0.06086956521739131,
+          "tpr": 0.3716577540106952
+        },
+        {
+          "fpr": 0.06666666666666667,
+          "tpr": 0.39037433155080214
+        },
+        {
+          "fpr": 0.07053140096618357,
+          "tpr": 0.4358288770053476
+        },
+        {
+          "fpr": 0.07632850241545894,
+          "tpr": 0.46524064171123
+        },
+        {
+          "fpr": 0.08019323671497584,
+          "tpr": 0.48128342245989303
+        },
+        {
+          "fpr": 0.08695652173913043,
+          "tpr": 0.5
+        },
+        {
+          "fpr": 0.09468599033816426,
+          "tpr": 0.5267379679144385
+        },
+        {
+          "fpr": 0.10048309178743961,
+          "tpr": 0.5561497326203209
+        },
+        {
+          "fpr": 0.10821256038647344,
+          "tpr": 0.5668449197860963
+        },
+        {
+          "fpr": 0.11690821256038647,
+          "tpr": 0.5882352941176471
+        },
+        {
+          "fpr": 0.1294685990338164,
+          "tpr": 0.5989304812834224
+        },
+        {
+          "fpr": 0.13623188405797101,
+          "tpr": 0.6149732620320856
+        },
+        {
+          "fpr": 0.14492753623188406,
+          "tpr": 0.6283422459893048
+        },
+        {
+          "fpr": 0.15458937198067632,
+          "tpr": 0.6443850267379679
+        },
+        {
+          "fpr": 0.16135265700483092,
+          "tpr": 0.6577540106951871
+        },
+        {
+          "fpr": 0.17004830917874397,
+          "tpr": 0.6684491978609626
+        },
+        {
+          "fpr": 0.18357487922705315,
+          "tpr": 0.6898395721925134
+        },
+        {
+          "fpr": 0.19227053140096617,
+          "tpr": 0.7058823529411765
+        },
+        {
+          "fpr": 0.19903381642512077,
+          "tpr": 0.7192513368983957
+        },
+        {
+          "fpr": 0.20676328502415459,
+          "tpr": 0.732620320855615
+        },
+        {
+          "fpr": 0.22801932367149758,
+          "tpr": 0.7433155080213903
+        },
+        {
+          "fpr": 0.23671497584541062,
+          "tpr": 0.7540106951871658
+        },
+        {
+          "fpr": 0.2492753623188406,
+          "tpr": 0.7780748663101604
+        },
+        {
+          "fpr": 0.2608695652173913,
+          "tpr": 0.7914438502673797
+        },
+        {
+          "fpr": 0.2753623188405797,
+          "tpr": 0.8048128342245989
+        },
+        {
+          "fpr": 0.3004830917874396,
+          "tpr": 0.8235294117647058
+        },
+        {
+          "fpr": 0.3178743961352657,
+          "tpr": 0.8342245989304813
+        },
+        {
+          "fpr": 0.3458937198067633,
+          "tpr": 0.8449197860962567
+        },
+        {
+          "fpr": 0.36038647342995167,
+          "tpr": 0.8556149732620321
+        },
+        {
+          "fpr": 0.38164251207729466,
+          "tpr": 0.8663101604278075
+        },
+        {
+          "fpr": 0.3932367149758454,
+          "tpr": 0.8770053475935828
+        },
+        {
+          "fpr": 0.4048309178743961,
+          "tpr": 0.893048128342246
+        },
+        {
+          "fpr": 0.43478260869565216,
+          "tpr": 0.9037433155080213
+        },
+        {
+          "fpr": 0.45217391304347826,
+          "tpr": 0.9144385026737968
+        },
+        {
+          "fpr": 0.4628019323671498,
+          "tpr": 0.9278074866310161
+        },
+        {
+          "fpr": 0.4966183574879227,
+          "tpr": 0.9411764705882353
+        },
+        {
+          "fpr": 0.5178743961352656,
+          "tpr": 0.9518716577540107
+        },
+        {
+          "fpr": 0.561352657004831,
+          "tpr": 0.9625668449197861
+        },
+        {
+          "fpr": 0.6144927536231884,
+          "tpr": 0.9732620320855615
+        },
+        {
+          "fpr": 0.663768115942029,
+          "tpr": 0.983957219251337
+        },
+        {
+          "fpr": 0.7516908212560387,
+          "tpr": 0.9946524064171123
+        },
+        {
+          "fpr": 0.9555555555555556,
+          "tpr": 1.0
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 956,
+      "false_positives": 79,
+      "false_negatives": 200,
+      "true_positives": 174
+    },
+    {
+      "model_name": "Gradient Boosting",
+      "accuracy": 0.8027,
+      "precision": 0.6655,
+      "recall": 0.516,
+      "f1_score": 0.5813,
+      "roc_auc": 0.8433,
+      "confusion_matrix": [
+        [
+          938,
+          97
+        ],
+        [
+          181,
+          193
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.005797101449275362,
+          "tpr": 0.09090909090909091
+        },
+        {
+          "fpr": 0.012560386473429951,
+          "tpr": 0.12566844919786097
+        },
+        {
+          "fpr": 0.015458937198067632,
+          "tpr": 0.17647058823529413
+        },
+        {
+          "fpr": 0.01932367149758454,
+          "tpr": 0.21390374331550802
+        },
+        {
+          "fpr": 0.024154589371980676,
+          "tpr": 0.2700534759358289
+        },
+        {
+          "fpr": 0.034782608695652174,
+          "tpr": 0.2914438502673797
+        },
+        {
+          "fpr": 0.03864734299516908,
+          "tpr": 0.3315508021390374
+        },
+        {
+          "fpr": 0.04541062801932367,
+          "tpr": 0.35294117647058826
+        },
+        {
+          "fpr": 0.050241545893719805,
+          "tpr": 0.39037433155080214
+        },
+        {
+          "fpr": 0.057004830917874394,
+          "tpr": 0.4117647058823529
+        },
+        {
+          "fpr": 0.06666666666666667,
+          "tpr": 0.4358288770053476
+        },
+        {
+          "fpr": 0.07246376811594203,
+          "tpr": 0.44919786096256686
+        },
+        {
+          "fpr": 0.08115942028985507,
+          "tpr": 0.47593582887700536
+        },
+        {
+          "fpr": 0.08888888888888889,
+          "tpr": 0.4946524064171123
+        },
+        {
+          "fpr": 0.0927536231884058,
+          "tpr": 0.516042780748663
+        },
+        {
+          "fpr": 0.10241545893719807,
+          "tpr": 0.5294117647058824
+        },
+        {
+          "fpr": 0.10821256038647344,
+          "tpr": 0.5561497326203209
+        },
+        {
+          "fpr": 0.12367149758454106,
+          "tpr": 0.56951871657754
+        },
+        {
+          "fpr": 0.13333333333333333,
+          "tpr": 0.5855614973262032
+        },
+        {
+          "fpr": 0.14106280193236714,
+          "tpr": 0.6096256684491979
+        },
+        {
+          "fpr": 0.15458937198067632,
+          "tpr": 0.6363636363636364
+        },
+        {
+          "fpr": 0.1671497584541063,
+          "tpr": 0.6577540106951871
+        },
+        {
+          "fpr": 0.17681159420289855,
+          "tpr": 0.6764705882352942
+        },
+        {
+          "fpr": 0.18937198067632852,
+          "tpr": 0.6925133689839572
+        },
+        {
+          "fpr": 0.19806763285024154,
+          "tpr": 0.7085561497326203
+        },
+        {
+          "fpr": 0.2135265700483092,
+          "tpr": 0.7219251336898396
+        },
+        {
+          "fpr": 0.23478260869565218,
+          "tpr": 0.7379679144385026
+        },
+        {
+          "fpr": 0.24154589371980675,
+          "tpr": 0.7593582887700535
+        },
+        {
+          "fpr": 0.2492753623188406,
+          "tpr": 0.7727272727272727
+        },
+        {
+          "fpr": 0.2608695652173913,
+          "tpr": 0.786096256684492
+        },
+        {
+          "fpr": 0.2753623188405797,
+          "tpr": 0.7967914438502673
+        },
+        {
+          "fpr": 0.28695652173913044,
+          "tpr": 0.8155080213903744
+        },
+        {
+          "fpr": 0.3169082125603865,
+          "tpr": 0.8315508021390374
+        },
+        {
+          "fpr": 0.3294685990338164,
+          "tpr": 0.8449197860962567
+        },
+        {
+          "fpr": 0.3690821256038647,
+          "tpr": 0.8582887700534759
+        },
+        {
+          "fpr": 0.391304347826087,
+          "tpr": 0.8689839572192514
+        },
+        {
+          "fpr": 0.39806763285024155,
+          "tpr": 0.8877005347593583
+        },
+        {
+          "fpr": 0.41256038647342996,
+          "tpr": 0.9010695187165776
+        },
+        {
+          "fpr": 0.4357487922705314,
+          "tpr": 0.9144385026737968
+        },
+        {
+          "fpr": 0.45217391304347826,
+          "tpr": 0.9251336898395722
+        },
+        {
+          "fpr": 0.485024154589372,
+          "tpr": 0.9331550802139037
+        },
+        {
+          "fpr": 0.5101449275362319,
+          "tpr": 0.946524064171123
+        },
+        {
+          "fpr": 0.5381642512077295,
+          "tpr": 0.9572192513368984
+        },
+        {
+          "fpr": 0.6028985507246377,
+          "tpr": 0.9679144385026738
+        },
+        {
+          "fpr": 0.6328502415458938,
+          "tpr": 0.9786096256684492
+        },
+        {
+          "fpr": 0.6966183574879227,
+          "tpr": 0.983957219251337
+        },
+        {
+          "fpr": 0.7352657004830918,
+          "tpr": 0.9946524064171123
+        },
+        {
+          "fpr": 0.8367149758454107,
+          "tpr": 0.9946524064171123
+        },
+        {
+          "fpr": 0.9024154589371981,
+          "tpr": 0.9973262032085561
+        },
+        {
+          "fpr": 0.9371980676328503,
+          "tpr": 0.9973262032085561
+        },
+        {
+          "fpr": 0.9855072463768116,
+          "tpr": 1.0
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 938,
+      "false_positives": 97,
+      "false_negatives": 181,
+      "true_positives": 193
+    },
+    {
+      "model_name": "XGBoost (Default)",
+      "accuracy": 0.7729,
+      "precision": 0.5823,
+      "recall": 0.5107,
+      "f1_score": 0.5442,
+      "roc_auc": 0.8152,
+      "confusion_matrix": [
+        [
+          898,
+          137
+        ],
+        [
+          183,
+          191
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.002898550724637681,
+          "tpr": 0.0427807486631016
+        },
+        {
+          "fpr": 0.007729468599033816,
+          "tpr": 0.07754010695187166
+        },
+        {
+          "fpr": 0.012560386473429951,
+          "tpr": 0.10427807486631016
+        },
+        {
+          "fpr": 0.01642512077294686,
+          "tpr": 0.15240641711229946
+        },
+        {
+          "fpr": 0.024154589371980676,
+          "tpr": 0.20320855614973263
+        },
+        {
+          "fpr": 0.030917874396135265,
+          "tpr": 0.22994652406417113
+        },
+        {
+          "fpr": 0.034782608695652174,
+          "tpr": 0.25668449197860965
+        },
+        {
+          "fpr": 0.04251207729468599,
+          "tpr": 0.2807486631016043
+        },
+        {
+          "fpr": 0.04927536231884058,
+          "tpr": 0.3181818181818182
+        },
+        {
+          "fpr": 0.057004830917874394,
+          "tpr": 0.3422459893048128
+        },
+        {
+          "fpr": 0.0647342995169082,
+          "tpr": 0.35561497326203206
+        },
+        {
+          "fpr": 0.07342995169082125,
+          "tpr": 0.3716577540106952
+        },
+        {
+          "fpr": 0.08019323671497584,
+          "tpr": 0.3877005347593583
+        },
+        {
+          "fpr": 0.08502415458937199,
+          "tpr": 0.40106951871657753
+        },
+        {
+          "fpr": 0.0927536231884058,
+          "tpr": 0.41711229946524064
+        },
+        {
+          "fpr": 0.09855072463768116,
+          "tpr": 0.4304812834224599
+        },
+        {
+          "fpr": 0.10628019323671498,
+          "tpr": 0.45454545454545453
+        },
+        {
+          "fpr": 0.11304347826086956,
+          "tpr": 0.4679144385026738
+        },
+        {
+          "fpr": 0.11884057971014493,
+          "tpr": 0.4946524064171123
+        },
+        {
+          "fpr": 0.13333333333333333,
+          "tpr": 0.5106951871657754
+        },
+        {
+          "fpr": 0.14396135265700483,
+          "tpr": 0.5374331550802139
+        },
+        {
+          "fpr": 0.14879227053140096,
+          "tpr": 0.5481283422459893
+        },
+        {
+          "fpr": 0.15845410628019324,
+          "tpr": 0.5775401069518716
+        },
+        {
+          "fpr": 0.16908212560386474,
+          "tpr": 0.5909090909090909
+        },
+        {
+          "fpr": 0.18164251207729468,
+          "tpr": 0.6229946524064172
+        },
+        {
+          "fpr": 0.1932367149758454,
+          "tpr": 0.6336898395721925
+        },
+        {
+          "fpr": 0.19903381642512077,
+          "tpr": 0.6497326203208557
+        },
+        {
+          "fpr": 0.2038647342995169,
+          "tpr": 0.6684491978609626
+        },
+        {
+          "fpr": 0.21932367149758455,
+          "tpr": 0.679144385026738
+        },
+        {
+          "fpr": 0.22995169082125605,
+          "tpr": 0.6898395721925134
+        },
+        {
+          "fpr": 0.24154589371980675,
+          "tpr": 0.7058823529411765
+        },
+        {
+          "fpr": 0.2492753623188406,
+          "tpr": 0.7192513368983957
+        },
+        {
+          "fpr": 0.2589371980676328,
+          "tpr": 0.7433155080213903
+        },
+        {
+          "fpr": 0.263768115942029,
+          "tpr": 0.7566844919786097
+        },
+        {
+          "fpr": 0.2792270531400966,
+          "tpr": 0.7700534759358288
+        },
+        {
+          "fpr": 0.2966183574879227,
+          "tpr": 0.786096256684492
+        },
+        {
+          "fpr": 0.30917874396135264,
+          "tpr": 0.7994652406417112
+        },
+        {
+          "fpr": 0.3285024154589372,
+          "tpr": 0.8155080213903744
+        },
+        {
+          "fpr": 0.34782608695652173,
+          "tpr": 0.8342245989304813
+        },
+        {
+          "fpr": 0.3748792270531401,
+          "tpr": 0.8449197860962567
+        },
+        {
+          "fpr": 0.4077294685990338,
+          "tpr": 0.8609625668449198
+        },
+        {
+          "fpr": 0.43091787439613527,
+          "tpr": 0.8743315508021391
+        },
+        {
+          "fpr": 0.44154589371980674,
+          "tpr": 0.8850267379679144
+        },
+        {
+          "fpr": 0.4666666666666667,
+          "tpr": 0.8957219251336899
+        },
+        {
+          "fpr": 0.48985507246376814,
+          "tpr": 0.9064171122994652
+        },
+        {
+          "fpr": 0.5130434782608696,
+          "tpr": 0.9197860962566845
+        },
+        {
+          "fpr": 0.5816425120772947,
+          "tpr": 0.9358288770053476
+        },
+        {
+          "fpr": 0.6280193236714976,
+          "tpr": 0.9491978609625669
+        },
+        {
+          "fpr": 0.6589371980676328,
+          "tpr": 0.9625668449197861
+        },
+        {
+          "fpr": 0.7053140096618358,
+          "tpr": 0.9732620320855615
+        },
+        {
+          "fpr": 0.7265700483091787,
+          "tpr": 0.983957219251337
+        },
+        {
+          "fpr": 0.8695652173913043,
+          "tpr": 0.9946524064171123
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 898,
+      "false_positives": 137,
+      "false_negatives": 183,
+      "true_positives": 191
+    },
+    {
+      "model_name": "XGBoost (Tuned)",
+      "accuracy": 0.8084,
+      "precision": 0.6831,
+      "recall": 0.5187,
+      "f1_score": 0.5897,
+      "roc_auc": 0.8479,
+      "confusion_matrix": [
+        [
+          945,
+          90
+        ],
+        [
+          180,
+          194
+        ]
+      ],
+      "roc_curve": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.003864734299516908,
+          "tpr": 0.058823529411764705
+        },
+        {
+          "fpr": 0.005797101449275362,
+          "tpr": 0.09358288770053476
+        },
+        {
+          "fpr": 0.011594202898550725,
+          "tpr": 0.13903743315508021
+        },
+        {
+          "fpr": 0.01642512077294686,
+          "tpr": 0.17914438502673796
+        },
+        {
+          "fpr": 0.020289855072463767,
+          "tpr": 0.2192513368983957
+        },
+        {
+          "fpr": 0.025120772946859903,
+          "tpr": 0.25133689839572193
+        },
+        {
+          "fpr": 0.02995169082125604,
+          "tpr": 0.26737967914438504
+        },
+        {
+          "fpr": 0.034782608695652174,
+          "tpr": 0.28342245989304815
+        },
+        {
+          "fpr": 0.04057971014492753,
+          "tpr": 0.31283422459893045
+        },
+        {
+          "fpr": 0.044444444444444446,
+          "tpr": 0.33689839572192515
+        },
+        {
+          "fpr": 0.04927536231884058,
+          "tpr": 0.3663101604278075
+        },
+        {
+          "fpr": 0.05217391304347826,
+          "tpr": 0.38235294117647056
+        },
+        {
+          "fpr": 0.057004830917874394,
+          "tpr": 0.4037433155080214
+        },
+        {
+          "fpr": 0.06086956521739131,
+          "tpr": 0.42245989304812837
+        },
+        {
+          "fpr": 0.06666666666666667,
+          "tpr": 0.45454545454545453
+        },
+        {
+          "fpr": 0.07439613526570048,
+          "tpr": 0.4679144385026738
+        },
+        {
+          "fpr": 0.08019323671497584,
+          "tpr": 0.4839572192513369
+        },
+        {
+          "fpr": 0.08405797101449275,
+          "tpr": 0.5053475935828877
+        },
+        {
+          "fpr": 0.09082125603864734,
+          "tpr": 0.5347593582887701
+        },
+        {
+          "fpr": 0.09855072463768116,
+          "tpr": 0.5508021390374331
+        },
+        {
+          "fpr": 0.10531400966183575,
+          "tpr": 0.5588235294117647
+        },
+        {
+          "fpr": 0.11594202898550725,
+          "tpr": 0.5855614973262032
+        },
+        {
+          "fpr": 0.12367149758454106,
+          "tpr": 0.5989304812834224
+        },
+        {
+          "fpr": 0.13623188405797101,
+          "tpr": 0.6122994652406417
+        },
+        {
+          "fpr": 0.14299516908212562,
+          "tpr": 0.6283422459893048
+        },
+        {
+          "fpr": 0.15169082125603864,
+          "tpr": 0.6390374331550802
+        },
+        {
+          "fpr": 0.1603864734299517,
+          "tpr": 0.6577540106951871
+        },
+        {
+          "fpr": 0.17681159420289855,
+          "tpr": 0.6737967914438503
+        },
+        {
+          "fpr": 0.18067632850241547,
+          "tpr": 0.6951871657754011
+        },
+        {
+          "fpr": 0.19227053140096617,
+          "tpr": 0.7085561497326203
+        },
+        {
+          "fpr": 0.1961352657004831,
+          "tpr": 0.7219251336898396
+        },
+        {
+          "fpr": 0.20483091787439614,
+          "tpr": 0.7299465240641712
+        },
+        {
+          "fpr": 0.20869565217391303,
+          "tpr": 0.7379679144385026
+        },
+        {
+          "fpr": 0.2289855072463768,
+          "tpr": 0.7513368983957219
+        },
+        {
+          "fpr": 0.23864734299516907,
+          "tpr": 0.7620320855614974
+        },
+        {
+          "fpr": 0.2531400966183575,
+          "tpr": 0.7727272727272727
+        },
+        {
+          "fpr": 0.26570048309178745,
+          "tpr": 0.7834224598930482
+        },
+        {
+          "fpr": 0.2792270531400966,
+          "tpr": 0.7994652406417112
+        },
+        {
+          "fpr": 0.28599033816425123,
+          "tpr": 0.8155080213903744
+        },
+        {
+          "fpr": 0.30531400966183575,
+          "tpr": 0.8262032085561497
+        },
+        {
+          "fpr": 0.3120772946859903,
+          "tpr": 0.8342245989304813
+        },
+        {
+          "fpr": 0.34492753623188405,
+          "tpr": 0.8529411764705882
+        },
+        {
+          "fpr": 0.35942028985507246,
+          "tpr": 0.8663101604278075
+        },
+        {
+          "fpr": 0.3671497584541063,
+          "tpr": 0.8770053475935828
+        },
+        {
+          "fpr": 0.3826086956521739,
+          "tpr": 0.8850267379679144
+        },
+        {
+          "fpr": 0.39516908212560387,
+          "tpr": 0.8957219251336899
+        },
+        {
+          "fpr": 0.4144927536231884,
+          "tpr": 0.9037433155080213
+        },
+        {
+          "fpr": 0.4280193236714976,
+          "tpr": 0.9171122994652406
+        },
+        {
+          "fpr": 0.44830917874396137,
+          "tpr": 0.9278074866310161
+        },
+        {
+          "fpr": 0.46570048309178746,
+          "tpr": 0.9411764705882353
+        },
+        {
+          "fpr": 0.518840579710145,
+          "tpr": 0.9491978609625669
+        },
+        {
+          "fpr": 0.5323671497584541,
+          "tpr": 0.9572192513368984
+        },
+        {
+          "fpr": 0.5661835748792271,
+          "tpr": 0.9679144385026738
+        },
+        {
+          "fpr": 0.6396135265700483,
+          "tpr": 0.9786096256684492
+        },
+        {
+          "fpr": 0.6840579710144927,
+          "tpr": 0.9866310160427807
+        },
+        {
+          "fpr": 0.8724637681159421,
+          "tpr": 0.9973262032085561
+        },
+        {
+          "fpr": 1.0,
+          "tpr": 1.0
+        }
+      ],
+      "true_negatives": 945,
+      "false_positives": 90,
+      "false_negatives": 180,
+      "true_positives": 194
+    }
+  ],
+  "best_model_name": "XGBoost (Tuned)",
+  "tuning_details": {
+    "random_forest": {
+      "default_params": {
+        "n_estimators": 100,
+        "max_depth": "None",
+        "min_samples_split": 2,
+        "min_samples_leaf": 1
+      },
+      "best_params": {
+        "class_weight": "None",
+        "max_depth": 6,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "n_estimators": 200
+      },
+      "before_tuning": {
+        "model_name": "Random Forest (Default)",
+        "accuracy": 0.7821,
+        "precision": 0.6128,
+        "recall": 0.4866,
+        "f1_score": 0.5425,
+        "roc_auc": 0.8183,
+        "confusion_matrix": [
+          [
+            920,
+            115
+          ],
+          [
+            192,
+            182
+          ]
+        ],
+        "roc_curve": [
+          {
+            "fpr": 0.0,
+            "tpr": 0.0
+          },
+          {
+            "fpr": 0.001932367149758454,
+            "tpr": 0.0106951871657754
+          },
+          {
+            "fpr": 0.001932367149758454,
+            "tpr": 0.029411764705882353
+          },
+          {
+            "fpr": 0.004830917874396135,
+            "tpr": 0.040106951871657755
+          },
+          {
+            "fpr": 0.005797101449275362,
+            "tpr": 0.05080213903743316
+          },
+          {
+            "fpr": 0.008695652173913044,
+            "tpr": 0.07219251336898395
+          },
+          {
+            "fpr": 0.010628019323671498,
+            "tpr": 0.10160427807486631
+          },
+          {
+            "fpr": 0.01642512077294686,
+            "tpr": 0.11229946524064172
+          },
+          {
+            "fpr": 0.01642512077294686,
+            "tpr": 0.12834224598930483
+          },
+          {
+            "fpr": 0.021256038647342997,
+            "tpr": 0.15240641711229946
+          },
+          {
+            "fpr": 0.02318840579710145,
+            "tpr": 0.18449197860962566
+          },
+          {
+            "fpr": 0.02608695652173913,
+            "tpr": 0.21122994652406418
+          },
+          {
+            "fpr": 0.028985507246376812,
+            "tpr": 0.22192513368983957
+          },
+          {
+            "fpr": 0.028985507246376812,
+            "tpr": 0.23529411764705882
+          },
+          {
+            "fpr": 0.03188405797101449,
+            "tpr": 0.25668449197860965
+          },
+          {
+            "fpr": 0.03188405797101449,
+            "tpr": 0.2727272727272727
+          },
+          {
+            "fpr": 0.034782608695652174,
+            "tpr": 0.2807486631016043
+          },
+          {
+            "fpr": 0.035748792270531404,
+            "tpr": 0.2887700534759358
+          },
+          {
+            "fpr": 0.03768115942028986,
+            "tpr": 0.29411764705882354
+          },
+          {
+            "fpr": 0.043478260869565216,
+            "tpr": 0.31283422459893045
+          },
+          {
+            "fpr": 0.04541062801932367,
+            "tpr": 0.32620320855614976
+          },
+          {
+            "fpr": 0.04927536231884058,
+            "tpr": 0.32620320855614976
+          },
+          {
+            "fpr": 0.05410628019323672,
+            "tpr": 0.34759358288770054
+          },
+          {
+            "fpr": 0.06086956521739131,
+            "tpr": 0.35561497326203206
+          },
+          {
+            "fpr": 0.06376811594202898,
+            "tpr": 0.36363636363636365
+          },
+          {
+            "fpr": 0.06859903381642513,
+            "tpr": 0.38235294117647056
+          },
+          {
+            "fpr": 0.07149758454106281,
+            "tpr": 0.39037433155080214
+          },
+          {
+            "fpr": 0.07536231884057971,
+            "tpr": 0.4037433155080214
+          },
+          {
+            "fpr": 0.08888888888888889,
+            "tpr": 0.42780748663101603
+          },
+          {
+            "fpr": 0.09082125603864734,
+            "tpr": 0.4385026737967914
+          },
+          {
+            "fpr": 0.10048309178743961,
+            "tpr": 0.45187165775401067
+          },
+          {
+            "fpr": 0.1111111111111111,
+            "tpr": 0.48663101604278075
+          },
+          {
+            "fpr": 0.12560386473429952,
+            "tpr": 0.516042780748663
+          },
+          {
+            "fpr": 0.13623188405797101,
+            "tpr": 0.5320855614973262
+          },
+          {
+            "fpr": 0.14396135265700483,
+            "tpr": 0.5588235294117647
+          },
+          {
+            "fpr": 0.1603864734299517,
+            "tpr": 0.5855614973262032
+          },
+          {
+            "fpr": 0.1671497584541063,
+            "tpr": 0.5935828877005348
+          },
+          {
+            "fpr": 0.1748792270531401,
+            "tpr": 0.606951871657754
+          },
+          {
+            "fpr": 0.1826086956521739,
+            "tpr": 0.6176470588235294
+          },
+          {
+            "fpr": 0.18743961352657004,
+            "tpr": 0.6203208556149733
+          },
+          {
+            "fpr": 0.20096618357487922,
+            "tpr": 0.6550802139037433
+          },
+          {
+            "fpr": 0.20579710144927535,
+            "tpr": 0.6818181818181818
+          },
+          {
+            "fpr": 0.22028985507246376,
+            "tpr": 0.6898395721925134
+          },
+          {
+            "fpr": 0.23864734299516907,
+            "tpr": 0.713903743315508
+          },
+          {
+            "fpr": 0.25217391304347825,
+            "tpr": 0.7459893048128342
+          },
+          {
+            "fpr": 0.27053140096618356,
+            "tpr": 0.7700534759358288
+          },
+          {
+            "fpr": 0.2898550724637681,
+            "tpr": 0.786096256684492
+          },
+          {
+            "fpr": 0.29082125603864734,
+            "tpr": 0.7887700534759359
+          },
+          {
+            "fpr": 0.30628019323671496,
+            "tpr": 0.8074866310160428
+          },
+          {
+            "fpr": 0.32270531400966185,
+            "tpr": 0.8235294117647058
+          },
+          {
+            "fpr": 0.3536231884057971,
+            "tpr": 0.8422459893048129
+          },
+          {
+            "fpr": 0.38454106280193234,
+            "tpr": 0.8556149732620321
+          },
+          {
+            "fpr": 0.40096618357487923,
+            "tpr": 0.8609625668449198
+          },
+          {
+            "fpr": 0.41256038647342996,
+            "tpr": 0.8716577540106952
+          },
+          {
+            "fpr": 0.4454106280193237,
+            "tpr": 0.8957219251336899
+          },
+          {
+            "fpr": 0.46956521739130436,
+            "tpr": 0.9010695187165776
+          },
+          {
+            "fpr": 0.506280193236715,
+            "tpr": 0.9117647058823529
+          },
+          {
+            "fpr": 0.5497584541062802,
+            "tpr": 0.9278074866310161
+          },
+          {
+            "fpr": 0.6096618357487923,
+            "tpr": 0.9411764705882353
+          },
+          {
+            "fpr": 0.6106280193236715,
+            "tpr": 0.9438502673796791
+          },
+          {
+            "fpr": 0.6454106280193237,
+            "tpr": 0.9625668449197861
+          },
+          {
+            "fpr": 0.6946859903381642,
+            "tpr": 0.9679144385026738
+          },
+          {
+            "fpr": 0.7304347826086957,
+            "tpr": 0.9705882352941176
+          },
+          {
+            "fpr": 0.7690821256038647,
+            "tpr": 0.9919786096256684
+          },
+          {
+            "fpr": 0.8434782608695652,
+            "tpr": 0.9973262032085561
+          },
+          {
+            "fpr": 1.0,
+            "tpr": 1.0
+          }
+        ],
+        "true_negatives": 920,
+        "false_positives": 115,
+        "false_negatives": 192,
+        "true_positives": 182
+      },
+      "after_tuning": {
+        "model_name": "Random Forest (Tuned)",
+        "accuracy": 0.802,
+        "precision": 0.6877,
+        "recall": 0.4652,
+        "f1_score": 0.555,
+        "roc_auc": 0.8432,
+        "confusion_matrix": [
+          [
+            956,
+            79
+          ],
+          [
+            200,
+            174
+          ]
+        ],
+        "roc_curve": [
+          {
+            "fpr": 0.0,
+            "tpr": 0.0
+          },
+          {
+            "fpr": 0.002898550724637681,
+            "tpr": 0.07754010695187166
+          },
+          {
+            "fpr": 0.008695652173913044,
+            "tpr": 0.12032085561497326
+          },
+          {
+            "fpr": 0.012560386473429951,
+            "tpr": 0.16042780748663102
+          },
+          {
+            "fpr": 0.017391304347826087,
+            "tpr": 0.19518716577540107
+          },
+          {
+            "fpr": 0.022222222222222223,
+            "tpr": 0.22727272727272727
+          },
+          {
+            "fpr": 0.028985507246376812,
+            "tpr": 0.24866310160427807
+          },
+          {
+            "fpr": 0.03285024154589372,
+            "tpr": 0.2807486631016043
+          },
+          {
+            "fpr": 0.03864734299516908,
+            "tpr": 0.3155080213903743
+          },
+          {
+            "fpr": 0.0463768115942029,
+            "tpr": 0.3342245989304813
+          },
+          {
+            "fpr": 0.051207729468599035,
+            "tpr": 0.3582887700534759
+          },
+          {
+            "fpr": 0.06086956521739131,
+            "tpr": 0.3716577540106952
+          },
+          {
+            "fpr": 0.06666666666666667,
+            "tpr": 0.39037433155080214
+          },
+          {
+            "fpr": 0.07053140096618357,
+            "tpr": 0.4358288770053476
+          },
+          {
+            "fpr": 0.07632850241545894,
+            "tpr": 0.46524064171123
+          },
+          {
+            "fpr": 0.08019323671497584,
+            "tpr": 0.48128342245989303
+          },
+          {
+            "fpr": 0.08695652173913043,
+            "tpr": 0.5
+          },
+          {
+            "fpr": 0.09468599033816426,
+            "tpr": 0.5267379679144385
+          },
+          {
+            "fpr": 0.10048309178743961,
+            "tpr": 0.5561497326203209
+          },
+          {
+            "fpr": 0.10821256038647344,
+            "tpr": 0.5668449197860963
+          },
+          {
+            "fpr": 0.11690821256038647,
+            "tpr": 0.5882352941176471
+          },
+          {
+            "fpr": 0.1294685990338164,
+            "tpr": 0.5989304812834224
+          },
+          {
+            "fpr": 0.13623188405797101,
+            "tpr": 0.6149732620320856
+          },
+          {
+            "fpr": 0.14492753623188406,
+            "tpr": 0.6283422459893048
+          },
+          {
+            "fpr": 0.15458937198067632,
+            "tpr": 0.6443850267379679
+          },
+          {
+            "fpr": 0.16135265700483092,
+            "tpr": 0.6577540106951871
+          },
+          {
+            "fpr": 0.17004830917874397,
+            "tpr": 0.6684491978609626
+          },
+          {
+            "fpr": 0.18357487922705315,
+            "tpr": 0.6898395721925134
+          },
+          {
+            "fpr": 0.19227053140096617,
+            "tpr": 0.7058823529411765
+          },
+          {
+            "fpr": 0.19903381642512077,
+            "tpr": 0.7192513368983957
+          },
+          {
+            "fpr": 0.20676328502415459,
+            "tpr": 0.732620320855615
+          },
+          {
+            "fpr": 0.22801932367149758,
+            "tpr": 0.7433155080213903
+          },
+          {
+            "fpr": 0.23671497584541062,
+            "tpr": 0.7540106951871658
+          },
+          {
+            "fpr": 0.2492753623188406,
+            "tpr": 0.7780748663101604
+          },
+          {
+            "fpr": 0.2608695652173913,
+            "tpr": 0.7914438502673797
+          },
+          {
+            "fpr": 0.2753623188405797,
+            "tpr": 0.8048128342245989
+          },
+          {
+            "fpr": 0.3004830917874396,
+            "tpr": 0.8235294117647058
+          },
+          {
+            "fpr": 0.3178743961352657,
+            "tpr": 0.8342245989304813
+          },
+          {
+            "fpr": 0.3458937198067633,
+            "tpr": 0.8449197860962567
+          },
+          {
+            "fpr": 0.36038647342995167,
+            "tpr": 0.8556149732620321
+          },
+          {
+            "fpr": 0.38164251207729466,
+            "tpr": 0.8663101604278075
+          },
+          {
+            "fpr": 0.3932367149758454,
+            "tpr": 0.8770053475935828
+          },
+          {
+            "fpr": 0.4048309178743961,
+            "tpr": 0.893048128342246
+          },
+          {
+            "fpr": 0.43478260869565216,
+            "tpr": 0.9037433155080213
+          },
+          {
+            "fpr": 0.45217391304347826,
+            "tpr": 0.9144385026737968
+          },
+          {
+            "fpr": 0.4628019323671498,
+            "tpr": 0.9278074866310161
+          },
+          {
+            "fpr": 0.4966183574879227,
+            "tpr": 0.9411764705882353
+          },
+          {
+            "fpr": 0.5178743961352656,
+            "tpr": 0.9518716577540107
+          },
+          {
+            "fpr": 0.561352657004831,
+            "tpr": 0.9625668449197861
+          },
+          {
+            "fpr": 0.6144927536231884,
+            "tpr": 0.9732620320855615
+          },
+          {
+            "fpr": 0.663768115942029,
+            "tpr": 0.983957219251337
+          },
+          {
+            "fpr": 0.7516908212560387,
+            "tpr": 0.9946524064171123
+          },
+          {
+            "fpr": 0.9555555555555556,
+            "tpr": 1.0
+          },
+          {
+            "fpr": 1.0,
+            "tpr": 1.0
+          }
+        ],
+        "true_negatives": 956,
+        "false_positives": 79,
+        "false_negatives": 200,
+        "true_positives": 174
+      }
+    },
+    "xgboost": {
+      "default_params": {
+        "n_estimators": 100,
+        "max_depth": 6,
+        "learning_rate": 0.3,
+        "subsample": 1.0
+      },
+      "best_params": {
+        "colsample_bytree": 0.8,
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "n_estimators": 200,
+        "subsample": 0.8
+      },
+      "before_tuning": {
+        "model_name": "XGBoost (Default)",
+        "accuracy": 0.7729,
+        "precision": 0.5823,
+        "recall": 0.5107,
+        "f1_score": 0.5442,
+        "roc_auc": 0.8152,
+        "confusion_matrix": [
+          [
+            898,
+            137
+          ],
+          [
+            183,
+            191
+          ]
+        ],
+        "roc_curve": [
+          {
+            "fpr": 0.0,
+            "tpr": 0.0
+          },
+          {
+            "fpr": 0.002898550724637681,
+            "tpr": 0.0427807486631016
+          },
+          {
+            "fpr": 0.007729468599033816,
+            "tpr": 0.07754010695187166
+          },
+          {
+            "fpr": 0.012560386473429951,
+            "tpr": 0.10427807486631016
+          },
+          {
+            "fpr": 0.01642512077294686,
+            "tpr": 0.15240641711229946
+          },
+          {
+            "fpr": 0.024154589371980676,
+            "tpr": 0.20320855614973263
+          },
+          {
+            "fpr": 0.030917874396135265,
+            "tpr": 0.22994652406417113
+          },
+          {
+            "fpr": 0.034782608695652174,
+            "tpr": 0.25668449197860965
+          },
+          {
+            "fpr": 0.04251207729468599,
+            "tpr": 0.2807486631016043
+          },
+          {
+            "fpr": 0.04927536231884058,
+            "tpr": 0.3181818181818182
+          },
+          {
+            "fpr": 0.057004830917874394,
+            "tpr": 0.3422459893048128
+          },
+          {
+            "fpr": 0.0647342995169082,
+            "tpr": 0.35561497326203206
+          },
+          {
+            "fpr": 0.07342995169082125,
+            "tpr": 0.3716577540106952
+          },
+          {
+            "fpr": 0.08019323671497584,
+            "tpr": 0.3877005347593583
+          },
+          {
+            "fpr": 0.08502415458937199,
+            "tpr": 0.40106951871657753
+          },
+          {
+            "fpr": 0.0927536231884058,
+            "tpr": 0.41711229946524064
+          },
+          {
+            "fpr": 0.09855072463768116,
+            "tpr": 0.4304812834224599
+          },
+          {
+            "fpr": 0.10628019323671498,
+            "tpr": 0.45454545454545453
+          },
+          {
+            "fpr": 0.11304347826086956,
+            "tpr": 0.4679144385026738
+          },
+          {
+            "fpr": 0.11884057971014493,
+            "tpr": 0.4946524064171123
+          },
+          {
+            "fpr": 0.13333333333333333,
+            "tpr": 0.5106951871657754
+          },
+          {
+            "fpr": 0.14396135265700483,
+            "tpr": 0.5374331550802139
+          },
+          {
+            "fpr": 0.14879227053140096,
+            "tpr": 0.5481283422459893
+          },
+          {
+            "fpr": 0.15845410628019324,
+            "tpr": 0.5775401069518716
+          },
+          {
+            "fpr": 0.16908212560386474,
+            "tpr": 0.5909090909090909
+          },
+          {
+            "fpr": 0.18164251207729468,
+            "tpr": 0.6229946524064172
+          },
+          {
+            "fpr": 0.1932367149758454,
+            "tpr": 0.6336898395721925
+          },
+          {
+            "fpr": 0.19903381642512077,
+            "tpr": 0.6497326203208557
+          },
+          {
+            "fpr": 0.2038647342995169,
+            "tpr": 0.6684491978609626
+          },
+          {
+            "fpr": 0.21932367149758455,
+            "tpr": 0.679144385026738
+          },
+          {
+            "fpr": 0.22995169082125605,
+            "tpr": 0.6898395721925134
+          },
+          {
+            "fpr": 0.24154589371980675,
+            "tpr": 0.7058823529411765
+          },
+          {
+            "fpr": 0.2492753623188406,
+            "tpr": 0.7192513368983957
+          },
+          {
+            "fpr": 0.2589371980676328,
+            "tpr": 0.7433155080213903
+          },
+          {
+            "fpr": 0.263768115942029,
+            "tpr": 0.7566844919786097
+          },
+          {
+            "fpr": 0.2792270531400966,
+            "tpr": 0.7700534759358288
+          },
+          {
+            "fpr": 0.2966183574879227,
+            "tpr": 0.786096256684492
+          },
+          {
+            "fpr": 0.30917874396135264,
+            "tpr": 0.7994652406417112
+          },
+          {
+            "fpr": 0.3285024154589372,
+            "tpr": 0.8155080213903744
+          },
+          {
+            "fpr": 0.34782608695652173,
+            "tpr": 0.8342245989304813
+          },
+          {
+            "fpr": 0.3748792270531401,
+            "tpr": 0.8449197860962567
+          },
+          {
+            "fpr": 0.4077294685990338,
+            "tpr": 0.8609625668449198
+          },
+          {
+            "fpr": 0.43091787439613527,
+            "tpr": 0.8743315508021391
+          },
+          {
+            "fpr": 0.44154589371980674,
+            "tpr": 0.8850267379679144
+          },
+          {
+            "fpr": 0.4666666666666667,
+            "tpr": 0.8957219251336899
+          },
+          {
+            "fpr": 0.48985507246376814,
+            "tpr": 0.9064171122994652
+          },
+          {
+            "fpr": 0.5130434782608696,
+            "tpr": 0.9197860962566845
+          },
+          {
+            "fpr": 0.5816425120772947,
+            "tpr": 0.9358288770053476
+          },
+          {
+            "fpr": 0.6280193236714976,
+            "tpr": 0.9491978609625669
+          },
+          {
+            "fpr": 0.6589371980676328,
+            "tpr": 0.9625668449197861
+          },
+          {
+            "fpr": 0.7053140096618358,
+            "tpr": 0.9732620320855615
+          },
+          {
+            "fpr": 0.7265700483091787,
+            "tpr": 0.983957219251337
+          },
+          {
+            "fpr": 0.8695652173913043,
+            "tpr": 0.9946524064171123
+          },
+          {
+            "fpr": 1.0,
+            "tpr": 1.0
+          }
+        ],
+        "true_negatives": 898,
+        "false_positives": 137,
+        "false_negatives": 183,
+        "true_positives": 191
+      },
+      "after_tuning": {
+        "model_name": "XGBoost (Tuned)",
+        "accuracy": 0.8084,
+        "precision": 0.6831,
+        "recall": 0.5187,
+        "f1_score": 0.5897,
+        "roc_auc": 0.8479,
+        "confusion_matrix": [
+          [
+            945,
+            90
+          ],
+          [
+            180,
+            194
+          ]
+        ],
+        "roc_curve": [
+          {
+            "fpr": 0.0,
+            "tpr": 0.0
+          },
+          {
+            "fpr": 0.003864734299516908,
+            "tpr": 0.058823529411764705
+          },
+          {
+            "fpr": 0.005797101449275362,
+            "tpr": 0.09358288770053476
+          },
+          {
+            "fpr": 0.011594202898550725,
+            "tpr": 0.13903743315508021
+          },
+          {
+            "fpr": 0.01642512077294686,
+            "tpr": 0.17914438502673796
+          },
+          {
+            "fpr": 0.020289855072463767,
+            "tpr": 0.2192513368983957
+          },
+          {
+            "fpr": 0.025120772946859903,
+            "tpr": 0.25133689839572193
+          },
+          {
+            "fpr": 0.02995169082125604,
+            "tpr": 0.26737967914438504
+          },
+          {
+            "fpr": 0.034782608695652174,
+            "tpr": 0.28342245989304815
+          },
+          {
+            "fpr": 0.04057971014492753,
+            "tpr": 0.31283422459893045
+          },
+          {
+            "fpr": 0.044444444444444446,
+            "tpr": 0.33689839572192515
+          },
+          {
+            "fpr": 0.04927536231884058,
+            "tpr": 0.3663101604278075
+          },
+          {
+            "fpr": 0.05217391304347826,
+            "tpr": 0.38235294117647056
+          },
+          {
+            "fpr": 0.057004830917874394,
+            "tpr": 0.4037433155080214
+          },
+          {
+            "fpr": 0.06086956521739131,
+            "tpr": 0.42245989304812837
+          },
+          {
+            "fpr": 0.06666666666666667,
+            "tpr": 0.45454545454545453
+          },
+          {
+            "fpr": 0.07439613526570048,
+            "tpr": 0.4679144385026738
+          },
+          {
+            "fpr": 0.08019323671497584,
+            "tpr": 0.4839572192513369
+          },
+          {
+            "fpr": 0.08405797101449275,
+            "tpr": 0.5053475935828877
+          },
+          {
+            "fpr": 0.09082125603864734,
+            "tpr": 0.5347593582887701
+          },
+          {
+            "fpr": 0.09855072463768116,
+            "tpr": 0.5508021390374331
+          },
+          {
+            "fpr": 0.10531400966183575,
+            "tpr": 0.5588235294117647
+          },
+          {
+            "fpr": 0.11594202898550725,
+            "tpr": 0.5855614973262032
+          },
+          {
+            "fpr": 0.12367149758454106,
+            "tpr": 0.5989304812834224
+          },
+          {
+            "fpr": 0.13623188405797101,
+            "tpr": 0.6122994652406417
+          },
+          {
+            "fpr": 0.14299516908212562,
+            "tpr": 0.6283422459893048
+          },
+          {
+            "fpr": 0.15169082125603864,
+            "tpr": 0.6390374331550802
+          },
+          {
+            "fpr": 0.1603864734299517,
+            "tpr": 0.6577540106951871
+          },
+          {
+            "fpr": 0.17681159420289855,
+            "tpr": 0.6737967914438503
+          },
+          {
+            "fpr": 0.18067632850241547,
+            "tpr": 0.6951871657754011
+          },
+          {
+            "fpr": 0.19227053140096617,
+            "tpr": 0.7085561497326203
+          },
+          {
+            "fpr": 0.1961352657004831,
+            "tpr": 0.7219251336898396
+          },
+          {
+            "fpr": 0.20483091787439614,
+            "tpr": 0.7299465240641712
+          },
+          {
+            "fpr": 0.20869565217391303,
+            "tpr": 0.7379679144385026
+          },
+          {
+            "fpr": 0.2289855072463768,
+            "tpr": 0.7513368983957219
+          },
+          {
+            "fpr": 0.23864734299516907,
+            "tpr": 0.7620320855614974
+          },
+          {
+            "fpr": 0.2531400966183575,
+            "tpr": 0.7727272727272727
+          },
+          {
+            "fpr": 0.26570048309178745,
+            "tpr": 0.7834224598930482
+          },
+          {
+            "fpr": 0.2792270531400966,
+            "tpr": 0.7994652406417112
+          },
+          {
+            "fpr": 0.28599033816425123,
+            "tpr": 0.8155080213903744
+          },
+          {
+            "fpr": 0.30531400966183575,
+            "tpr": 0.8262032085561497
+          },
+          {
+            "fpr": 0.3120772946859903,
+            "tpr": 0.8342245989304813
+          },
+          {
+            "fpr": 0.34492753623188405,
+            "tpr": 0.8529411764705882
+          },
+          {
+            "fpr": 0.35942028985507246,
+            "tpr": 0.8663101604278075
+          },
+          {
+            "fpr": 0.3671497584541063,
+            "tpr": 0.8770053475935828
+          },
+          {
+            "fpr": 0.3826086956521739,
+            "tpr": 0.8850267379679144
+          },
+          {
+            "fpr": 0.39516908212560387,
+            "tpr": 0.8957219251336899
+          },
+          {
+            "fpr": 0.4144927536231884,
+            "tpr": 0.9037433155080213
+          },
+          {
+            "fpr": 0.4280193236714976,
+            "tpr": 0.9171122994652406
+          },
+          {
+            "fpr": 0.44830917874396137,
+            "tpr": 0.9278074866310161
+          },
+          {
+            "fpr": 0.46570048309178746,
+            "tpr": 0.9411764705882353
+          },
+          {
+            "fpr": 0.518840579710145,
+            "tpr": 0.9491978609625669
+          },
+          {
+            "fpr": 0.5323671497584541,
+            "tpr": 0.9572192513368984
+          },
+          {
+            "fpr": 0.5661835748792271,
+            "tpr": 0.9679144385026738
+          },
+          {
+            "fpr": 0.6396135265700483,
+            "tpr": 0.9786096256684492
+          },
+          {
+            "fpr": 0.6840579710144927,
+            "tpr": 0.9866310160427807
+          },
+          {
+            "fpr": 0.8724637681159421,
+            "tpr": 0.9973262032085561
+          },
+          {
+            "fpr": 1.0,
+            "tpr": 1.0
+          }
+        ],
+        "true_negatives": 945,
+        "false_positives": 90,
+        "false_negatives": 180,
+        "true_positives": 194
+      }
+    }
+  },
+  "performance_explanations": {
+    "logistic_regression": {
+      "strengths": "Serves as an interpretable baseline with fast convergence. Efficient when log-odds of churn are approximately linearly separable.",
+      "limitations": "Assumes monotonic linear relationships between features and the log-odds of churn. Struggles to naturally capture high-order feature interactions (e.g., tenure interacting with Fiber Optic and Month-to-month contracts) without explicit polynomial terms.",
+      "verdict": "Solid baseline with high precision and strong ROC-AUC, but capped by linear decision boundary constraints."
+    },
+    "random_forest": {
+      "strengths": "Ensemble bagging method that constructs an uncorrelated forest of deep decision trees. Excels at capturing non-linear relationships and feature interactions while reducing variance through bagging.",
+      "limitations": "Can exhibit lower recall on the minority churn class unless tuned or class-weighted, because majority class (retained customers) dominates standard Gini impurity splits in deep trees.",
+      "verdict": "Very robust against outliers and scaling variations; delivers superior stability and variance control compared to single decision trees."
+    },
+    "xgboost": {
+      "strengths": "Gradient boosting framework that builds shallow trees sequentially, explicitly optimizing pseudo-residuals. Employs second-order Taylor expansion gradients, L1/L2 regularization (gamma, lambda) to prevent overfitting, and handles non-linear feature interactions seamlessly.",
+      "limitations": "Sensitive to hyperparameter tuning (learning rate, subsample ratio, tree depth). Requires cross-validation to prevent overfitting on noisy tabular features.",
+      "verdict": "Best overall balance between Recall, Precision, and ROC-AUC. Effectively isolates high-risk customer signatures that linear models miss."
+    },
+    "decision_tree": {
+      "strengths": "Highly transparent and easy to visualize with white-box decision rules.",
+      "limitations": "Prone to high variance and overfitting the training split, leading to weaker generalization on unseen test data.",
+      "verdict": "Helpful educational benchmark, but outperformed by ensemble methods."
+    },
+    "gradient_boosting": {
+      "strengths": "Iteratively fits trees on residual errors, achieving high discriminative capacity.",
+      "limitations": "Slower training time and less advanced regularization compared to XGBoost's column subsampling and L2 tree shrinkage.",
+      "verdict": "Strong performance closely trailing XGBoost."
+    },
+    "synthesis": "Why performances differ: Tabular telecom customer behavior is governed by complex non-linear combinations (e.g., customers with month-to-month contracts, high monthly charges, and fiber optic internet without tech support churn at over 65%, whereas any of these factors in isolation shows much lower churn). Linear models like Logistic Regression approximate these interactions via additive weights, while tree ensembles (Random Forest and XGBoost) partition the feature space into granular risk quadrants. Furthermore, XGBoost's sequential gradient-based error minimization and built-in shrinkage allow it to achieve the optimal trade-off between identifying churners (Recall) without excessively flagging false alarms (Precision)."
+  },
+  "feature_names": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "gender_Female",
+    "gender_Male",
+    "SeniorCitizen_0",
+    "SeniorCitizen_1",
+    "Partner_No",
+    "Partner_Yes",
+    "Dependents_No",
+    "Dependents_Yes",
+    "PhoneService_No",
+    "PhoneService_Yes",
+    "MultipleLines_No",
+    "MultipleLines_No phone service",
+    "MultipleLines_Yes",
+    "InternetService_DSL",
+    "InternetService_Fiber optic",
+    "InternetService_No",
+    "OnlineSecurity_No",
+    "OnlineSecurity_No internet service",
+    "OnlineSecurity_Yes",
+    "OnlineBackup_No",
+    "OnlineBackup_No internet service",
+    "OnlineBackup_Yes",
+    "DeviceProtection_No",
+    "DeviceProtection_No internet service",
+    "DeviceProtection_Yes",
+    "TechSupport_No",
+    "TechSupport_No internet service",
+    "TechSupport_Yes",
+    "StreamingTV_No",
+    "StreamingTV_No internet service",
+    "StreamingTV_Yes",
+    "StreamingMovies_No",
+    "StreamingMovies_No internet service",
+    "StreamingMovies_Yes",
+    "Contract_Month-to-month",
+    "Contract_One year",
+    "Contract_Two year",
+    "PaperlessBilling_No",
+    "PaperlessBilling_Yes",
+    "PaymentMethod_Bank transfer (automatic)",
+    "PaymentMethod_Credit card (automatic)",
+    "PaymentMethod_Electronic check",
+    "PaymentMethod_Mailed check"
+  ]
+}
