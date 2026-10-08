@@ -1,6 +1,6 @@
 # CUSTOMER CHURN PREDICTION SYSTEM
 > **Tagline:** *"Predict. Prevent. Retain."*  
-> **Brand Name:** **Churnguard** — *Customer Intelligence Platform*
+> **Brand Name:** **ChurnGuard** — *Customer Intelligence Platform*
 
 An enterprise-grade, full-lifecycle Machine Learning web application designed to forecast customer defection, isolate critical risk drivers, evaluate competing classification architectures, and generate automated retention playbooks for telecommunications service providers.
 
@@ -8,7 +8,7 @@ An enterprise-grade, full-lifecycle Machine Learning web application designed to
 
 ## 📌 Executive Summary & Objective
 
-Customer acquisition in telecommunications costs approximately 5 to 7 times more than customer retention. The objective of **Churnguard** is to transition retention strategies from **reactive damage control** to **proactive algorithmic intervention**.
+Customer acquisition in telecommunications costs approximately 5 to 7 times more than customer retention. The objective of **ChurnGuard** is to transition retention strategies from **reactive damage control** to **proactive algorithmic intervention**.
 
 By analyzing historical behavioral, contractual, and billing telemetry, the system:
 1. Identifies early defection indicators before cancellation occurs.

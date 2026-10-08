@@ -12,7 +12,7 @@ import os
 
 # Set page configuration FIRST before any other streamlit commands
 st.set_page_config(
-    page_title="Churnguard | Customer Intelligence Platform",
+    page_title="ChurnGuard | Customer Intelligence Platform",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"

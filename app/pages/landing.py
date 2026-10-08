@@ -110,7 +110,7 @@ def render_landing_page():
             login_email = st.text_input("Work Email", value="", placeholder="name@company.com", key="in_login_email")
             login_pwd = st.text_input("Password", value="", type="password", placeholder="Enter your password", key="in_login_pwd")
             
-            if st.button("Sign In to Churnguard", use_container_width=True, key="btn_do_login"):
+            if st.button("Sign In to ChurnGuard", use_container_width=True, key="btn_do_login"):
                 if not login_email or not login_pwd:
                     st.error("Please enter both email and password.")
                 else:
