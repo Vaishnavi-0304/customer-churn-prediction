@@ -16,7 +16,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from predict import ChurnPredictor
-from components.ui import render_page_header, create_risk_meter_chart, render_footer
+from components.ui import render_page_header, create_risk_meter_chart, render_footer, apply_custom_css
 
 @st.cache_resource
 def get_predictor():
@@ -282,3 +282,7 @@ def render_prediction_page():
                 """, unsafe_allow_html=True)
 
     render_footer()
+
+if __name__ == "__main__":
+    apply_custom_css()
+    render_prediction_page()

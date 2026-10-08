@@ -15,7 +15,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from auth import update_user_profile, get_user_by_id
-from components.ui import render_page_header, render_footer
+from components.ui import render_page_header, render_footer, apply_custom_css
 
 def render_profile_page():
     render_page_header("User Profile & Workspace Settings", "Manage enterprise credentials, organizational identity, and platform preferences.")
@@ -101,3 +101,7 @@ def render_profile_page():
             st.rerun()
 
     render_footer()
+
+if __name__ == "__main__":
+    apply_custom_css()
+    render_profile_page()

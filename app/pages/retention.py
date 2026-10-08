@@ -18,7 +18,7 @@ SRC_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.a
 if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
-from components.ui import render_page_header, render_insight_box, render_footer, PLOTLY_DARK_LAYOUT
+from components.ui import render_page_header, render_insight_box, render_footer, PLOTLY_DARK_LAYOUT, apply_custom_css
 
 def render_retention_page():
     render_page_header("Customer Retention Playbooks & Strategy", "Operationalize predictive churn scores into proactive customer interventions and financial ROI preservation.")
@@ -208,3 +208,7 @@ def render_retention_page():
     render_insight_box(f"By successfully intervening with {retention_success}% of {at_risk_pool:,} high-risk customers paying ${avg_monthly_rev:.2f}/mo, the enterprise secures ${annual_saved:,.0f} in annual revenue that would otherwise be permanently lost to competitor defection.")
 
     render_footer()
+
+if __name__ == "__main__":
+    apply_custom_css()
+    render_retention_page()

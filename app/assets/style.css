@@ -15,6 +15,7 @@
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
+div[data-testid="stSidebarNav"] {display: none !important;}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {

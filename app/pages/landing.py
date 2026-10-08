@@ -16,7 +16,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from auth import authenticate_user, register_user
-from components.ui import render_footer
+from components.ui import render_footer, apply_custom_css
 
 def render_landing_page():
     """Renders the landing and authentication screen."""
@@ -107,14 +107,21 @@ def render_landing_page():
         tab_login, tab_register = st.tabs(["🔑 Sign In", "📝 Create Account"])
         
         with tab_login:
-            # Demo pre-fill helper
-            if st.button("⚡ Use Demo Account (Alex Morgan)", key="btn_quick_demo"):
-                st.session_state["login_email_input"] = "demo@churnguard.ai"
-                st.session_state["login_password_input"] = "Admin@123"
-                st.rerun()
+            # 1-Click Instant Demo Login
+            if st.button("⚡ Instant Demo Sign-In (Alex Morgan)", key="btn_quick_demo", use_container_width=True):
+                user, msg = authenticate_user("demo@churnguard.ai", "Admin@123")
+                if user:
+                    st.session_state["authenticated"] = True
+                    st.session_state["user"] = user
+                    st.session_state["current_page"] = "Dashboard"
+                    st.success("Signed in as Demo Evaluator! Loading workspace...")
+                    st.rerun()
+                else:
+                    st.error(msg)
                 
-            login_email = st.text_input("Work Email", value=st.session_state.get("login_email_input", ""), key="in_login_email")
-            login_pwd = st.text_input("Password", value=st.session_state.get("login_password_input", ""), type="password", key="in_login_pwd")
+            st.markdown("<div style='text-align:center; color:#64748b; font-size:0.78rem; margin:8px 0;'>— OR ENTER CREDENTIALS —</div>", unsafe_allow_html=True)
+            login_email = st.text_input("Work Email", value="", placeholder="demo@churnguard.ai", key="in_login_email")
+            login_pwd = st.text_input("Password", value="", type="password", placeholder="Admin@123", key="in_login_pwd")
             
             if st.button("Sign In to ChurnGuard AI", use_container_width=True, key="btn_do_login"):
                 if not login_email or not login_pwd:
@@ -146,3 +153,7 @@ def render_landing_page():
                     st.error(msg)
 
     render_footer()
+
+if __name__ == "__main__":
+    apply_custom_css()
+    render_landing_page()

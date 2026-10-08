@@ -20,7 +20,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from preprocessing import load_raw_data, clean_data
-from components.ui import render_page_header, render_insight_box, render_footer, PLOTLY_DARK_LAYOUT
+from components.ui import render_page_header, render_insight_box, render_footer, PLOTLY_DARK_LAYOUT, apply_custom_css
 
 @st.cache_data
 def load_analytics_data():
@@ -239,3 +239,7 @@ def render_analytics_page():
         render_insight_box("Subscribers with Paperless Billing churn at 33.6% compared to 16.3% for paper billing. Paperless billing customers are digitally active, tech-savvy, and more prone to exploring competitor promotions online.")
 
     render_footer()
+
+if __name__ == "__main__":
+    apply_custom_css()
+    render_analytics_page()

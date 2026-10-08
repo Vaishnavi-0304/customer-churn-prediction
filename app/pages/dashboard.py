@@ -19,7 +19,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from preprocessing import load_raw_data, clean_data
-from components.ui import render_page_header, render_insight_box, render_footer, PLOTLY_DARK_LAYOUT
+from components.ui import render_page_header, render_insight_box, render_footer, PLOTLY_DARK_LAYOUT, apply_custom_css
 
 @st.cache_data
 def get_dashboard_data():
@@ -193,3 +193,7 @@ def render_dashboard_page():
         """, unsafe_allow_html=True)
 
     render_footer()
+
+if __name__ == "__main__":
+    apply_custom_css()
+    render_dashboard_page()
