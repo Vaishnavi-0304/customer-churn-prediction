@@ -93,11 +93,12 @@ def create_risk_meter_chart(probability_pct: float, risk_level: str, risk_color:
         }
     ))
     
-    fig.update_layout(
+    layout_args = {
         **PLOTLY_DARK_LAYOUT,
-        height=240,
-        margin=dict(l=25, r=25, t=25, b=15)
-    )
+        "height": 240,
+        "margin": dict(l=25, r=25, t=25, b=15)
+    }
+    fig.update_layout(**layout_args)
     return fig
 
 def render_footer():

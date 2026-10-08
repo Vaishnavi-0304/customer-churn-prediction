@@ -196,4 +196,7 @@ def render_dashboard_page():
 
 if __name__ == "__main__":
     apply_custom_css()
+    if not st.session_state.get("authenticated", False):
+        st.warning("🔒 Authentication Required: Please sign in on the main portal to access this page.")
+        st.stop()
     render_dashboard_page()
